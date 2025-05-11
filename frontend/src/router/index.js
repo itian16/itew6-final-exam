@@ -23,9 +23,14 @@ const router = createRouter({
       path: '/transactions',
       name: 'transactions',
       component: () => import('../views/TransactionsView.vue'),
+    },
+    {
+      path: '/return-management',
+      name: 'return-management',
+      component: () => import('../views/ReturnManagementView.vue'),
     }
-    
   ],
 })
 
 export default router
+

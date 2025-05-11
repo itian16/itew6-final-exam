@@ -5,8 +5,9 @@
     <nav class="mb-4">
       <router-link to="/" class="btn btn-outline-primary me-2">🏠 Home</router-link>
       <router-link to="/books" class="btn btn-outline-primary me-2">📘 Manage Books</router-link>
-      <router-link to="/borrow" class="btn btn-outline-primary">🔄 Borrow Book</router-link>
+      <router-link to="/borrow" class="btn btn-outline-primary me-2">🔄 Borrow Book</router-link>
       <router-link to="/transactions" class="btn btn-outline-primary me-2">📄 View Transactions</router-link>
+      <router-link to="/return-management" class="btn btn-outline-primary me-2">📥 Return Books</router-link>
     </nav>
 
     <router-view />
@@ -24,3 +25,4 @@ body {
   background-color: #f9f9f9;
 }
 </style>
+
