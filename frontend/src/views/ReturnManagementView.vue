@@ -1,6 +1,6 @@
 <template>
-  <div class="return-management">
-    <h2>📥 Return Management</h2>
+  <div style="padding:80px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="return-management">
+    <h2 style="font-size:40px;">Return Management</h2>
     
     <ReturnBook />
   </div>

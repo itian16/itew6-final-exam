@@ -1,7 +1,6 @@
 <template>
+  <div style="border: 2px solid #ccc; border-radius: 10px; padding: 30px; width: 50%; background-color: #70d2ff;">
     <div class="container mt-4">
-      <h3>🔄 Borrow a Book</h3>
-  
     <div v-if="successMessage" class="alert alert-success">
       {{ successMessage }}
         </div>
@@ -9,32 +8,33 @@
     <div v-if="errorMessage" class="alert alert-danger">
       {{ errorMessage }}
         </div>
-  
-    <form @submit.prevent="borrowBook">
-      <div class="form-group mb-2">
-        <label>Select Book</label>
-        <select v-model="book_id" class="form-control" required>
-          <option disabled value="">-- Choose a book --</option>
-          <option v-for="book in books" :key="book.id" :value="book.id" :disabled="book.copies_available === 0">
-            {{ book.title }} by {{ book.author }} ({{ book.copies_available }} available)
-          </option>
-        </select>
-      </div>
+    
+      <form @submit.prevent="borrowBook">
+        <div class="form-group mb-2">
+          <label>Select Book: </label>
+          <select v-model="book_id" class="form-control" required>
+            <option disabled value="">-- Choose a book --</option>
+            <option v-for="book in books" :key="book.id" :value="book.id" :disabled="book.copies_available === 0">
+              {{ book.title }} by {{ book.author }} ({{ book.copies_available }} available)
+            </option>
+          </select>
+        </div>
 
-      <div class="form-group mb-3">
-        <label>Select User</label>
-        <select v-model="username" class="form-control" required>
-          <option disabled value="">-- Choose a user --</option>
-          <option v-for="user in users" :key="user" :value="user">
-            {{ user }}
-          </option>
-        </select>
+        <div class="form-group mb-3">
+          <label>Select User: </label>
+          <select v-model="username" class="form-control" required>
+            <option disabled value="">-- Choose a user --</option>
+            <option v-for="user in users" :key="user" :value="user">
+              {{ user }}
+            </option>
+          </select>
+      </div><br>
+
+        <button class="btn btn-primary" :disabled="borrowInProgress">
+          {{ borrowInProgress ? 'Borrowing...' : 'Borrow Book' }}
+        </button>
+      </form>
     </div>
-
-      <button class="btn btn-primary" :disabled="borrowInProgress">
-        {{ borrowInProgress ? 'Borrowing...' : 'Borrow Book' }}
-      </button>
-    </form>
   </div>
   </template>
   

@@ -85,12 +85,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'library_db',
         'USER': 'root',  # Replace with your MySQL username
-        'PASSWORD': 'admin',  # Replace with your MySQL password
+        'PASSWORD': 'Daredevil0612',  # Replace with your MySQL password
         'HOST': 'localhost',
         'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
