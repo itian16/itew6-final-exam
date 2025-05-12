@@ -61,7 +61,7 @@
         });
       },
       deleteBook(id) {
-        axios.delete(`books/${id}/`).then(this.fetchBooks);
+        axios.delete(`books/${id}/delete/`).then(this.fetchBooks);
       },
       cancelForm() {
         this.showForm = false;

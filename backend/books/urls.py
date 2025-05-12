@@ -5,7 +5,8 @@ from .views import BookViewSet, BorrowTransactionViewSet
 urlpatterns = [
     #ENDPOINT NG BOOKS
     path('books/', BookViewSet.as_view({'get': 'list', 'post': 'create'}), name='book-list'),
-    path('books/<int:pk>/', BookViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='book-detail'),
+    path('books/<int:pk>/', BookViewSet.as_view({'get': 'retrieve', 'put': 'update'}), name='book-detail'),
+    path('books/<int:pk>/delete/', BookViewSet.as_view({'delete': 'destroy'}), name='book-delete'),
     
     #ENDPOINT NG TRANSACTIONS
     path('transactions/', BorrowTransactionViewSet.as_view({'get': 'list'}), name='transaction-list'),
